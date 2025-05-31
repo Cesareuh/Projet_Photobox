@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>index td6 : fetch</title>
+		<link rel="stylesheet" href="css/index.css">
+	</head>
+	<body>
+		<main id="photo">
+			<section id="la_galerie">
+			</section>
+			<section id="la_photo">
+			</section>
+			<section id="la_categorie">
+			</section>
+			<section id="les_commentaires">
+			</section>
+		</main>
+
+		<script id="galerieTemplate" type="text/x-handlebars-template">
+			<div id="galeriePhotos">
+				{{#each photos}}
+					<img id={{this.photo.id}} class="thumbnail" src={{this.photo.thumbnail.href}}>
+				{{/each}}
+			</div>
+			{{#if prev}}
+			<button id=prev>prev</button>
+			{{/if}}
+			{{#if next}}
+			<button id=next>next</button>
+			{{/if}}
+		</script>
+
+		<script id="photoTemplate" type="text/x-handlebars-template">
+			<h1>Photo : {{photo.id}}</h1>
+			<div id="imgContainer">
+				<img src={{url}}>
+			</div>
+			<h4>{{photo.titre}}</h4>
+			<p>{{photo.descr}}</p>
+			<p>{{photo.type}}, {{photo.width}} x {{photo.height}}</p>
+		</script>
+
+		<script id="categorieTemplate" type="text/x-handlebars-template">
+			<h4>categorie : {{categorie}}</h4>
+		</script>
+
+		<script id="commentairesTemplate" type="text/x-handlebars-template">
+			<h4>commentaires : </h4>
+			<ul>
+			{{#each commentaires}}
+				<li><b>{{this.pseudo}}</b> : {{this.content}}</li>
+			{{/each}}
+			</ul>
+		</script>
+
+		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+		<script type="module" src='js/out.js' defer ></script>
+	</body>
+</html>

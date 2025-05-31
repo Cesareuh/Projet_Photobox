@@ -1,0 +1,25 @@
+#imgContainer {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+img {
+	border-radius: 10px;
+}
+
+#galeriePhotos {
+	justify-content: center;
+	width: 100%;
+}
+#galeriePhotos img{
+	width: 30%;
+	aspect-ratio: 1/1;
+	object-fit: cover;
+}
+
+@media screen and (min-width: 500px){
+	#galeriePhotos{
+		width: 500px;
+	}
+}
